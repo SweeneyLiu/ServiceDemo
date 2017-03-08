@@ -65,4 +65,16 @@ public class MyService extends Service {
         // TODO: Return the communication channel to the service.
         return downloadBinder;
     }
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        Log.i(TAG, "onUnbind: ");
+        return true;
+    }
+
+    @Override
+    public void onRebind(Intent intent) {
+        Log.i(TAG, "onRebind: ");
+        super.onRebind(intent);
+    }
 }
